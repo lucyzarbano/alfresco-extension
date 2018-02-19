@@ -1,0 +1,38 @@
+<extension>
+  <modules>
+    <module>
+      <id>Aggiunta Azioni custom alla Library Actions</id>
+      <version>1.0</version>
+      <auto-deploy>true</auto-deploy>
+      <configurations>
+			<config evaluator="string-compare" condition="DocLibActions">
+				<actions> 
+					<action id="print-pdf" type="javascript" label="actions.print.pdf" icon="print-pdf">
+						<param name="function">onViewPrintablePDF</param> 
+						<param name="action">print-pdf</param> 
+						<param name="active">true</param> 
+						<param name="successMessage">message.print-pdf.success</param>
+						<param name="failureMessage">message.print-pdf.failure</param>
+					</action>
+				</actions> 
+				
+				<actionGroups> 
+						<actionGroup id="document-browse">
+							<action index="400" id="print-pdf" />
+						</actionGroup>
+						<actionGroup id="document-details"> 
+							<action index="400" id="print-pdf" />
+						</actionGroup>
+					</actionGroups>
+			</config>
+			
+			<config evaluator="string-compare" condition="DocLibCustom">
+                    <dependencies>
+                        <js src="resources/print-pdf-actions-share/components/documentlibrary/custom-doclib-actions.js" />
+                    </dependencies>
+                </config>
+		</configurations>
+		
+    </module>
+  </modules>
+</extension>

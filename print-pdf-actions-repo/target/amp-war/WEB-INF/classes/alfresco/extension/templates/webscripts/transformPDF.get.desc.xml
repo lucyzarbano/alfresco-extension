@@ -1,0 +1,8 @@
+<webscript>
+    <shortname>Transform PDF Webscript</shortname>
+    <description>Trasforma un documento in PDF</description>
+    <!--<url>/trasnformpdf</url>-->
+    <url>/transformPDF/file?nodeRef={nodeRef}</url>
+    <authentication runas="admin">user</authentication>
+    <format default="json">any</format>
+</webscript>

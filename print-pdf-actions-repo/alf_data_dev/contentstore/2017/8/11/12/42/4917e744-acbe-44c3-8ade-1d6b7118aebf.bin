@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><component>
+      <guid>page.title.user~agata.fassari~dashboard</guid>
+      <scope>page</scope>
+      <region-id>title</region-id>
+      <source-id>user/agata.fassari/dashboard</source-id>
+      <url>/components/title/user-dashboard-title</url>
+    </component>

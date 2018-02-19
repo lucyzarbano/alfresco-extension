@@ -1,0 +1,1063 @@
+===Database eliminacode-rem
+
+== Struttura della tabella ec_accettazione
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|id_totem|int(11)|No|
+|id_prenotazione|int(11)|No|
+|id_operatore|int(11)|No|
+|id_prestazione|int(11)|Sì|NULL
+|id_modalita|int(11)|No|
+|id_servizio|int(11)|Sì|NULL
+|id_medico|int(11)|Sì|NULL
+|id_agenda|int(11)|Sì|NULL
+|data_inserimento|date|No|
+|ora_accettazione|time|No|
+|nome_paziente|varchar(45)|No|
+|data_nascita|date|Sì|NULL
+== Dump dei dati per la tabella ec_accettazione
+
+|1|1|10|1|1|1|24|7|1|2017-07-27|17:13:17|Paziente 7|NULL
+== Struttura della tabella ec_agenda_servizi_giornaliera
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|id_agenda_HTSAN|int(11)|No|
+|nome_agenda|varchar(45)|Sì|NULL
+|id_medico|int(11)|Sì|NULL
+|nome_medico|varchar(35)|Sì|NULL
+|id_servizio|int(11)|Sì|NULL
+|nome_servizio|varchar(35)|Sì|NULL
+|id_modalita|int(11)|Sì|NULL
+|data|date|Sì|NULL
+|ora_inizio|time|Sì|NULL
+|ora_fine|time|Sì|NULL
+|prenotati|int(2)|Sì|NULL
+|liberi|int(2)|Sì|NULL
+== Dump dei dati per la tabella ec_agenda_servizi_giornaliera
+
+|30|1|Di Grazia (inizi/controlli)|7|Alfio Michelangelo Di Grazia|24|Radioterapia|1|2017-07-27|08:30:00|19:30:00|NULL|NULL
+|31|12|PET ONCOLOGICHE REM|3|Luigi Castorina|7|Medicina Nucleare|2|2017-07-27|08:20:00|20:00:00|NULL|NULL
+|32|3|UMINA VINCENZA|700|Vincenza Umina|24|Radioterapia|1|2017-07-27|10:30:00|20:30:00|NULL|NULL
+|33|1000|Centraggi|0|0|0|Radioterapia|1|2017-07-27|08:00:00|20:00:00|0|0
+|34|1001|CICLI 1|0| |NULL|Cicli Radioterapici|3|2017-07-27|08:00:00|20:00:00|NULL|NULL
+|35|1002|CICLI 2|0| |NULL|Cicli Radioterapici|3|2017-07-27|08:00:00|20:00:00|NULL|NULL
+|36|4|Controlli Post RT|0|NULL|NULL|NULL|1|2017-07-27|14:00:00|19:00:00|NULL|NULL
+== Struttura della tabella ec_agende
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|id_agenda_HTSAN|int(11)|No|
+|nome_agenda|varchar(45)|Sì|NULL
+|id_servizio|int(11)|Sì|NULL
+|nome_servizio|varchar(45)|Sì|NULL
+|id_medico|int(11)|Sì|NULL
+|nome_medico|varchar(45)|Sì|NULL
+|tipo|varchar(16)|Sì|NULL
+|id_modalita|int(11)|No|
+|stato|int(3)|Sì|NULL
+|condivisione|int(11)|No|
+|attiva_da|date|Sì|NULL
+|attiva_fino_a|date|Sì|NULL
+== Dump dei dati per la tabella ec_agende
+
+|9|3|Umina Vincenza|NULL|RADIOTERAPIA|700|UMINA VINCENZA|AMBULATORIO|1|1|0|2017-02-23|NULL
+|10|12|PET Oncologiche REM|NULL|MEDICINA NUCLEARE|3|CASTORINA LUIGI|AMBULATORIO|2|1|0|NULL|NULL
+|12|22|Miocardiche Basali|NULL|MEDICINA NUCLEARE|3|CASTORINA LUIGI|AMBULATORIO|1|1|0|NULL|NULL
+|13|1|Di Grazia (inizi controlli)|NULL|RADIOTERAPIA|7|DI GRAZIA ALFIO|AMBULATORIO|1|1|0|NULL|NULL
+|15|4|Controlli Post RT|NULL|RADIOTERAPIA|0| |AMBULATORIO|1|1|1|NULL|NULL
+|16|8|I visite dott. Bordonaro|NULL|RADIOTERAPIA|737|BORDONARO LUIGI|AMBULATORIO|1|1|0|NULL|NULL
+|17|2|Di Grazia (visite)|NULL|RADIOTERAPIA|7|DI GRAZIA ALFIO|AMBULATORIO|1|1|0|NULL|NULL
+|18|24|Scintigrafie - altro|NULL|MEDICINA NUCLEARE|3|CASTORINA LUIGI|AMBULATORIO|2|1|0|NULL|NULL
+|20|11|PET Colina|NULL|MEDICINA NUCLEARE|3|CASTORINA LUIGI|AMBULATORIO|2|1|0|NULL|NULL
+|21|33|Marino Lorenza|NULL|RADIOTERAPIA|14|LORENZA MARINO|AMBULATORIO|1|1|0|NULL|NULL
+|29|1000|Centraggi (Siemens Somatom)|0|RADIOTERAPIA|0| | |1|1|2|NULL|NULL
+|30|21|Scintigrafie Ossee|0|MEDICINA NUCLEARE|3|LUIGI CASTORINA| |2|1|0|NULL|NULL
+|31|1001|Cicli 1 (Trilogy6169)|NULL|CICLI RADIOTERAPICI|0|NULL| |3|1|2|NULL|NULL
+|32|1002|Cicli 2 (TrueBeamSN2088)|NULL|CICLI RADIOTERAPICI|0|NULL| |3|1|2|NULL|NULL
+== Struttura della tabella ec_display
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|logo|varchar(100)|No|
+|info|text|No|
+|organigramma|text|No|
+|id_meteo|int(11)|No|
+== Dump dei dati per la tabella ec_display
+
+== Struttura della tabella ec_feed
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|titolo|varchar(255)|No|
+|intervallo|int(11)|No|
+|url|varchar(255)|No|
+|categoria|varchar(255)|No|
+|blocco_entrata|int(11)|No|
+== Dump dei dati per la tabella ec_feed
+
+== Struttura della tabella ec_immagini
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|titolo|varchar(255)|No|
+|descrizione|text|No|
+== Dump dei dati per la tabella ec_immagini
+
+== Struttura della tabella ec_modalita
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|codice|varchar(50)|No|
+|ordine|int(11)|No|
+|nome|varchar(50)|No|
+|creato_da|int(11)|No|
+|modificato_da|int(11)|No|
+|data_creazione|datetime|No|
+|data_modifica|datetime|No|
+|eliminato|int(11)|No|
+== Dump dei dati per la tabella ec_modalita
+
+|3|03|2|Cicli Radioterapici|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|2|02|3|M. Nucleare|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|1|01|1|Radioterapia|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|4|04|4|Informazioni|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+== Struttura della tabella ec_news
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|titolo|varchar(255)|No|
+|data|datetime|No|
+|descrizione|text|No|
+|creato_da|int(11)|No|
+|modificato_da|int(11)|No|
+|data_creazione|datetime|No|
+|data_modifica|datetime|No|
+|eliminato|int(2)|No|0
+== Dump dei dati per la tabella ec_news
+
+|11|Notizia 1|2014-08-01 18:34:12|Martedì di sangue a Gerusalemme, dove questa mattina quattro israeliani sono stati uccisi e altri otto sono rimasti feriti nel corso di un attentato condotto da due palestinesi - armati di una scure, un coltello e un'arma da fuoco - in un complesso religioso|84|84|2014-08-01 18:34:22|2014-11-18 12:47:22|1
+|12|Notizia 2|2014-11-05 13:13:00|Il Sole 24 Ore
+	
+Il flop dell'Abenomics spinge il Giappone alle elezioni anticipate
+Il Sole 24 Ore	 - ‎39 minuti fa‎	
+
+Il premier giapponese Shinzo Abe ha annunciato la decisione di sciogliere la Camera Bassa il prossimo 21 novembre in vista di elezioni politiche anticipate che si svolgeranno entro la fine dell'anno. Abe ha anche comunicato che rinvierà di 18 mesi ...|84|84|2014-11-18 12:54:41|2014-11-18 13:10:52|1
+|13|Notizia 3|2015-01-13 14:00:00|Sgombero di due centri sociali, scontri a Milano
+Il Secolo XIX	 - ‎11 minuti fa‎	
+	
+Milano - Cariche delle forze dell'ordine e lancio di fumogeni, stamani, a Milano, nel corso di uno sgombero di due centri sociali adiacenti, in via Ravenna e via Pomposa, nella zona sud della città. Gli agenti hanno anche lanciato lacrimogeni, gli antagonisti ...|84|0|2014-11-18 12:55:03|0000-00-00 00:00:00|1
+|14|News 1|2015-07-14 17:43:00|cdns fvfdvf|87|87|2015-07-10 17:43:41|2015-07-10 17:43:49|1
+|15|Google etichetta 'fact check'|2017-04-26 11:30:00|GOOGLE corre ai ripari contro le bufale. Di pari passo con le iniziative di Facebook per la verifica e lo stop alle fake news, anche Mountain View compie un nuovo passo creando un'etichetta con l'obiettivo di aiutare gli utenti a trovare informazioni utili.|1|1|2017-04-26 11:31:24|2017-04-26 11:33:11|0
+|16|human google|2017-04-27 11:32:00|QUANTI sovrani inglesi erano mancini? Chi ha il copyright della Bibbia? Quanti nevrotici ci sono in America? E ancora: per essere eletti Papa bisogna essere vergini? (la risposta è no). Si sa, al giorno d'oggi chiunque sia assalito da un dubbio urgente.|1|0|2017-04-26 11:32:39|0000-00-00 00:00:00|0
+== Struttura della tabella ec_organigramma
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|descrizione|varchar(500)|No|
+|creato_da|int(11)|No|
+|modificato_da|int(11)|No|
+|data_creazione|datetime|No|
+|data_modifica|datetime|No|
+|eliminato|int(2)|No|0
+== Dump dei dati per la tabella ec_organigramma
+
+|2|fjkberkjrbkejbvkv
+v jvb djkvbdjkb
+vdf vkfdbv ksjb|84|0|2014-08-01 18:35:30|0000-00-00 00:00:00|0
+== Struttura della tabella ec_prenotazioni_dh_ambulatori
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|data|date|Sì|NULL
+|ora|time|Sì|NULL
+|nome_paziente|varchar(45)|Sì|NULL
+|data_nascita|date|Sì|NULL
+|id_agenda|int(11)|Sì|NULL
+|nome_agenda|varchar(35)|Sì|NULL
+|fuorilista|int(11)|Sì|0
+|accettato|int(2)|Sì|NULL
+== Dump dei dati per la tabella ec_prenotazioni_dh_ambulatori
+
+|4|2017-07-27|08:20:00|Paziente 1|NULL|12|PET ONCOLOGICHE REM|0|0
+|5|2017-07-27|08:40:00|Paziente 2|NULL|12|PET ONCOLOGICHE REM|0|0
+|6|2017-07-27|09:00:00|Paziente 3|NULL|12|PET ONCOLOGICHE REM|0|0
+|7|2017-07-27|09:20:00|Paziente 4|NULL|12|PET ONCOLOGICHE REM|0|0
+|8|2017-07-27|10:00:00|Paziente 5|NULL|12|PET ONCOLOGICHE REM|0|0
+|9|2017-07-27|10:20:00|Paziente 6|NULL|12|PET ONCOLOGICHE REM|0|0
+|10|2017-07-27|10:30:00|Paziente 7|NULL|1|DI GRAZIA (inizi controlli)|0|1
+|11|2017-07-27|10:40:00|Paziente 8|NULL|12|PET ONCOLOGICHE REM|0|0
+|12|2017-07-27|15:00:00|Paziente 9|NULL|3|UMINA VINCENZA|0|0
+|13|2017-07-27|15:30:00|Paziente 10|NULL|3|UMINA VINCENZA|0|0
+|14|2017-07-27|16:00:00|Paziente 11|NULL|3|UMINA VINCENZA|0|0
+|15|2017-07-27|16:30:00|Paziente 12|NULL|3|UMINA VINCENZA|0|0
+|16|2017-07-27|08:00:00|Paziente 13|NULL|1001|CICLI 1|0|0
+|17|2017-07-27|08:40:00|Paziente 14|NULL|1001|CICLI 1|0|0
+|18|2017-07-27|09:00:00|Paziente 15|NULL|1001|CICLI 1|0|0
+|19|2017-07-27|08:40:00|Paziente 16|NULL|1002|CICLI 2|0|0
+|20|2017-07-27|09:00:00|Paziente 17|NULL|1002|CICLI 2|0|0
+|21|2017-07-27|09:20:00|Paziente 18|NULL|1002|CICLI 2|0|0
+|22|2017-07-27|09:40:00|Paziente 19|NULL|1002|CICLI 2|0|0
+|50|2017-07-27|09:00:00|Centraggi 1|NULL|1000|Centraggi|0|0
+|51|2017-07-27|09:30:00|Centraggi 2|NULL|1000|Centraggi|0|0
+|52|2017-07-27|10:00:00|Centraggi 3|NULL|1000|Centraggi|0|0
+|53|2017-07-27|10:30:00|Centraggi 4|NULL|1000|Centraggi|0|0
+|54|2017-07-27|11:00:00|Centraggi 5|NULL|1000|Centraggi|0|0
+|55|2017-07-27|11:30:00|Centraggi 6|NULL|1000|Centraggi|0|0
+== Struttura della tabella ec_prenotazioni_ricoveri
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|data|date|Sì|NULL
+|ora|time|Sì|NULL
+|nome_paziente|varchar(45)|Sì|NULL
+|data_nascita|date|Sì|NULL
+|regime|varchar(35)|Sì|NULL
+|reparto|varchar(35)|Sì|NULL
+|id_medico|int(11)|Sì|NULL
+|fuorilista|int(11)|Sì|0
+|accettato|varchar(2)|Sì|NULL
+== Dump dei dati per la tabella ec_prenotazioni_ricoveri
+
+|1|2017-07-27|08:00:00|CUSIMANO ROBERTO|1952-04-09|1|43  |NULL|0|0
+|2|2017-07-27|11:00:00|CICERO PAOLA|1976-10-07|3|6400|NULL|0|NULL
+|3|2017-07-27|12:00:00|GULISANO MARIA|1958-11-02|3|02  |NULL|0|NULL
+|4|2017-07-27|00:00:00|RICCIOLI MARIA DONATA|1965-01-27|3|6401|NULL|0|0
+|5|2017-07-27|08:30:00|COPPOLA ALFIO|1937-05-24|3|43  |NULL|0|0
+|6|2017-07-27|08:30:00|FRAZZETTO GAETANO|1935-01-02|3|43  |NULL|0|0
+|7|2017-07-27|09:00:00|SORBELLO ANNA ROSARIA GIUSEPPINA|1964-08-26|1|6404|NULL|0|0
+|8|2017-07-27|09:00:00|TORRESINO AGATA|1937-11-11|1|6400|NULL|0|0
+|9|2017-07-27|11:00:00|CELESTE CARMELA DONATELLA|1960-07-17|3|6400|NULL|0|NULL
+|10|2017-07-27|11:00:00|SCALIA ANGELO|1946-07-23|3|02  |NULL|0|NULL
+|11|2017-07-27|09:00:00|MAUGERI ANGELA|1933-03-01|1|6433|NULL|0|NULL
+|12|2017-07-27|11:00:00|LAZZAROTTI MATTEO|1959-06-12|3|02  |NULL|0|NULL
+|13|2017-07-27|08:00:00|CANNILLA VINCENZO|1948-01-15|3|43  |NULL|0|NULL
+|14|2017-07-27|09:00:00|VIGO MARCELLO|1941-11-12|3|6404|NULL|0|NULL
+|15|2017-07-27|08:30:00|ROMA FABIO|1993-06-21|1|6400|NULL|0|NULL
+|16|2017-07-27|08:00:00|CARPINTERI CLAUDIO|1966-08-02|1|43  |NULL|0|0
+|17|2017-07-27|09:00:00|LEONARDI ROSARIA|1932-02-24|1|6433|NULL|0|NULL
+|18|2017-07-27|08:00:00|ZAMMATARO SANTO|1957-04-11|2|0201|NULL|0|0
+|19|2017-07-27|07:30:00|NASISI CARMELO|1938-05-07|3|6401|NULL|0|0
+|20|2017-07-27|09:00:00|FARINATO ROSARIA|1951-02-20|1|6400|NULL|0|NULL
+|21|2017-07-27|00:00:00|MASSIMIANI RITA CARMELA|1954-04-30|1|6401|NULL|0|0
+|22|2017-07-27|15:00:00|ZAPPALA' GIUSEPPA|1947-06-27|1|6401|NULL|0|NULL
+|23|2017-07-27|08:00:00|MAIORELLI ANNA|1943-01-20|1|6406|NULL|0|0
+|24|2017-07-27|08:00:00|GANCI CAMILLO|1941-01-15|1|6406|NULL|0|0
+|25|2017-07-27|08:00:00|SPAMPINATO ROSARIO|1938-11-21|2|0201|NULL|0|0
+|26|2017-07-27|08:00:00|FINOCCHIARO BIAGIO|1939-10-01|1|6406|NULL|0|NULL
+|27|2017-07-27|08:00:00|GARFI GIANFRANCA|1948-08-29|1|6406|NULL|0|0
+== Struttura della tabella ec_prestazione_ambulatorio
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|id_accettazione|int(11)|No|
+|codice_agenda|int(11)|Sì|NULL
+|id_infermiere|int(11)|No|
+|id_medico|int(11)|Sì|NULL
+|id_utente|int(11)|No|
+|cod_prestazione|int(11)|No|
+|status|int(11)|No|
+|data|date|No|
+|inizio_prestazione|time|Sì|NULL
+|fine_prestazione|time|Sì|NULL
+|ora_presa_carico|time|Sì|NULL
+|modalita|varchar(50)|No|
+== Dump dei dati per la tabella ec_prestazione_ambulatorio
+
+|1|1|1|0|7|0|1|1|2017-07-27|NULL|NULL|NULL|1
+== Struttura della tabella ec_prestazione_day_hospital
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|id_accettazione|int(11)|No|
+|id_infermiere|int(11)|No|
+|id_medico|int(11)|No|
+|data|date|No|
+|inizio_prelievo|time|No|
+|fine_prelievo|time|No|
+|status|int(11)|No|
+|cod_prestazione|int(11)|Sì|NULL
+|inizio_prestazione|time|No|
+|fine_prestazione|time|No|
+|ora_presa_carico|time|No|
+|modalita|varchar(50)|No|
+== Dump dei dati per la tabella ec_prestazione_day_hospital
+
+== Struttura della tabella ec_prestazione_ricovero
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|id_accettazione|int(11)|No|
+|id_infermiere|int(11)|No|
+|cod_prestazione|int(11)|No|
+|status|int(11)|No|
+|data|date|No|
+|inizio_prestazione|time|Sì|NULL
+|fine_prestazione|time|Sì|NULL
+|ora_presa_carico|time|Sì|NULL
+|modalita|varchar(50)|No|
+== Dump dei dati per la tabella ec_prestazione_ricovero
+
+== Struttura della tabella ec_programma_agenda
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|giorno|varchar(35)|No|
+|am_inizio|time|No|
+|am_fine|time|No|
+|am_freq|int(11)|No|
+|pm_inizio|time|No|
+|pm_fine|time|No|
+|pm_freq|int(11)|No|
+== Dump dei dati per la tabella ec_programma_agenda
+
+== Struttura della tabella ec_programma_modalita
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|id_utente|int(11)|No|
+|id_modalita|int(11)|No|
+|data_inizio|datetime|No|
+|data_fine|datetime|No|
+|creato_da|int(11)|No|
+|modificato_da|int(11)|No|
+|data_creazione|datetime|No|
+|data_modifica|datetime|No|
+|eliminato|int(11)|No|
+== Dump dei dati per la tabella ec_programma_modalita
+
+|16|3|4|2014-10-26 16:28:00|2016-09-16 15:02:00|0|1|0000-00-00 00:00:00|2015-09-01 15:02:41|0
+|14|3|1|2014-10-15 16:28:00|2016-09-23 15:02:00|0|1|0000-00-00 00:00:00|2015-09-01 15:02:52|0
+|15|3|2|2014-07-09 16:28:00|2016-09-02 15:02:00|0|1|0000-00-00 00:00:00|2015-09-01 15:02:23|0
+|7|4|1|2014-05-01 16:27:09|2016-09-22 15:03:00|0|1|0000-00-00 00:00:00|2015-09-01 15:03:58|0
+|8|4|2|2014-05-01 16:27:20|2019-09-17 15:03:00|0|1|0000-00-00 00:00:00|2015-09-01 15:03:38|0
+|12|83|2|2014-09-04 18:33:00|2015-01-08 18:33:00|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|13|83|1|2014-09-04 18:34:00|2014-12-25 18:34:00|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|17|4|4|2014-08-29 16:23:00|2016-09-22 15:03:00|1|1|2014-12-04 16:18:44|2015-09-01 15:03:49|0
+|18|87|1|2015-05-04 14:54:00|2016-09-22 15:04:00|1|1|2015-07-07 14:54:40|2015-09-01 15:04:26|0
+|19|87|2|2015-04-12 14:54:00|2016-09-22 15:04:00|1|1|2015-07-07 14:54:53|2015-09-01 15:04:54|0
+|20|87|3|2015-04-12 14:54:00|2016-09-29 15:04:00|1|1|2015-07-07 14:55:06|2015-09-01 15:04:35|0
+|21|87|4|2015-04-13 14:55:00|2016-09-26 15:04:00|1|1|2015-07-07 14:55:19|2015-09-01 15:04:45|0
+|22|86|3|2015-07-06 17:51:00|2015-07-31 17:51:00|1|0|2015-07-07 17:51:24|0000-00-00 00:00:00|0
+|23|1|1|2015-07-06 17:00:00|2017-03-15 11:59:00|1|1|2015-07-07 17:52:15|2016-12-06 11:59:10|1
+|24|88|1|2015-05-19 17:47:00|2015-07-29 17:46:00|87|87|2015-07-10 17:46:58|2015-07-10 17:47:07|1
+|25|89|1|2015-12-15 16:43:00|2016-03-23 16:43:00|1|0|2015-12-21 16:43:48|0000-00-00 00:00:00|0
+|26|1|2|2016-12-04 11:59:00|2017-07-27 11:59:00|1|0|2016-12-06 11:59:26|0000-00-00 00:00:00|1
+|27|89|4|0000-00-00 00:00:00|0000-00-00 00:00:00|1|0|2016-12-22 15:33:33|0000-00-00 00:00:00|0
+|28|89|4|0000-00-00 00:00:00|0000-00-00 00:00:00|1|0|2016-12-22 15:33:43|0000-00-00 00:00:00|0
+|29|1|4|2017-01-01 11:00:00|2017-05-31 09:40:00|1|0|2017-01-11 09:40:56|0000-00-00 00:00:00|0
+|30|1|3|2016-12-13 11:35:00|2022-11-12 15:05:00|1|1|2017-01-11 11:35:37|2017-04-10 15:05:58|0
+|31|90|3|2016-11-07 16:57:00|2017-10-18 16:58:00|1|0|2017-01-19 16:58:08|0000-00-00 00:00:00|1
+|32|90|1|2016-10-03 11:13:00|2017-08-23 11:13:00|1|0|2017-01-23 11:13:41|0000-00-00 00:00:00|0
+|33|9|1|2017-01-01 16:24:00|2017-02-16 16:24:00|1|0|2017-01-23 16:24:12|0000-00-00 00:00:00|0
+|34|29|1|2017-01-01 11:09:00|2018-04-20 11:09:00|1|0|2017-01-25 11:09:50|0000-00-00 00:00:00|0
+|35|127|1|2017-02-05 11:05:00|2022-07-30 11:05:00|1|0|2017-02-24 11:05:59|0000-00-00 00:00:00|0
+|36|97|1|2017-02-05 11:19:00|2017-06-15 11:19:00|1|0|2017-02-24 11:19:20|0000-00-00 00:00:00|1
+|37|97|2|2016-10-09 11:19:00|2017-07-27 11:19:00|1|0|2017-02-24 11:19:35|0000-00-00 00:00:00|1
+|38|140|1|2016-07-04 11:06:00|2019-11-22 11:06:00|1|0|2017-03-06 11:06:22|0000-00-00 00:00:00|1
+|39|140|4|2016-07-11 11:06:00|2020-03-26 11:06:00|1|0|2017-03-06 11:06:38|0000-00-00 00:00:00|1
+|40|1|1|2017-03-05 16:02:00|2021-08-27 16:02:00|1|0|2017-03-16 16:02:46|0000-00-00 00:00:00|0
+|41|1|2|2017-03-12 16:02:00|2022-03-25 16:02:00|1|0|2017-03-16 16:03:01|0000-00-00 00:00:00|0
+|42|140|3|2017-04-18 16:11:00|2017-06-22 16:11:00|1|0|2017-04-21 16:11:56|0000-00-00 00:00:00|1
+|43|140|2|2017-04-02 16:12:00|2017-07-28 16:12:00|1|0|2017-04-21 16:12:09|0000-00-00 00:00:00|1
+|44|140|1|2017-04-09 10:39:00|2017-04-02 10:39:00|1|0|2017-04-26 10:39:09|0000-00-00 00:00:00|1
+|45|142|3|2017-04-02 10:58:00|2018-01-30 10:58:00|1|0|2017-04-26 10:58:44|0000-00-00 00:00:00|0
+|46|142|1|2017-04-02 10:59:00|2017-04-03 11:00:00|1|1|2017-04-26 11:00:05|2017-04-26 11:01:01|0
+|47|140|1|2017-04-04 11:17:00|2017-05-01 11:21:00|1|1|2017-05-02 11:16:08|2017-05-02 11:21:57|1
+|48|140|1|2017-05-02 11:22:00|2021-05-19 11:23:00|1|1|2017-05-02 11:21:38|2017-05-02 11:23:33|0
+|49|140|4|2017-05-01 11:24:00|2017-05-15 11:23:00|1|1|2017-05-02 11:23:49|2017-05-02 11:24:03|0
+== Struttura della tabella ec_rss
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|titolo|varchar(45)|No|
+|canale|varchar(255)|No|
+|creato_da|int(11)|No|
+|modificato_da|int(11)|No|
+|data_creazione|datetime|No|
+|data_modifica|datetime|No|
+|eliminato|int(2)|No|0
+== Dump dei dati per la tabella ec_rss
+
+|4|Sport Google|http://xml.corriereobjects.it/rss/spettacoli.xml|84|84|2014-08-01 18:34:57|2014-11-18 12:45:11|1
+|5|repubblica arte|http://www.repubblica.it/rss/speciali/arte/rss2.0.xml|1|0|2017-04-26 11:34:47|0000-00-00 00:00:00|0
+|6|repubblica tecnologia|http://www.repubblica.it/rss/tecnologia/rss2.0.xml|1|0|2017-04-26 11:35:53|0000-00-00 00:00:00|0
+== Struttura della tabella ec_ruoli
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|ruolo|varchar(30)|No|
+|parent_id|int(11)|No|
+|creato_da|int(11)|Sì|NULL
+|modificato_da|int(11)|No|
+|data_creazione|datetime|No|
+|data_modifica|datetime|No|
+|eliminato|int(11)|No|0
+== Dump dei dati per la tabella ec_ruoli
+
+|1|super-amministratore|0|NULL|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|2|amministratore|0|NULL|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|3|operatore|0|NULL|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|4|infermiere|0|NULL|0|0000-00-00 00:00:00|0000-00-00 00:00:00|1
+|5|medico|0|NULL|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|6|comunicazione|0|NULL|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+== Struttura della tabella ec_servizi
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|id_servizio_HTSAN|int(11)|Sì|NULL
+|nome_servizio|varchar(35)|Sì|NULL
+== Dump dei dati per la tabella ec_servizi
+
+|1|2|DAY HOSPITAL
+|2|201|DAY SURGERY
+|3|203|UROLOGIA D.H.
+|4|204|ONCOEMATOLOGIA D.H.
+|5|3|ANATOMIA PATOLOGICA
+|6|5|ANGIOLOGIA
+|7|8|CARDIOLOGIA
+|8|120|IORT
+|9|18|EMOTRASFUSIONE
+|10|30|NEUROCHIRURGIA
+|11|34|OCULISTICA
+|12|38|OTORINOLARINGOIATRIA
+|13|3801|MICROCHIRURGIA ORL
+|14|43|UROLOGIA
+|15|4301|LITOTRISSIA
+|16|49|TERAPIA INTENSIVA
+|17|50|ANESTESIA/TERAP.ANTALGICA AMB.
+|18|56|RECUPERO E RIABILITAZIONE
+|19|58|ENDOSCOPIA
+|20|59|GINECOLOGIA
+|21|61|MEDICINA NUCLEARE
+|22|63|ECOGRAFIA
+|23|631|ECOGRAFIA DR.RIZZO
+|24|64|ONCOLOGIA AMBUL.
+|25|6400|ONCOLOGIA MEDICA
+|26|6401|CHIRURGIA ONCOLOGICA
+|27|6402|RADIOTERAPIA
+|28|6403|TERAPIA ANTALGICA
+|29|6404|ONCOEMATOLOGIA
+|30|6405|TMO
+|31|6406|CHIRURGIA TORACICA
+|32|6410|CHIRURGIA ONCOLOGICA AMB.
+|33|6411|BREAST UNIT
+|34|6433|CURE PALLIATIVE
+|35|65|TAC
+|36|66|ONCOEMATOLOGIA AMBULAT./REF.
+|37|67|RMN
+|38|68|PNEUMOLOGIA
+|39|69|RADIOLOGIA
+|40|6901|RADIOLOGIA INTERVENTISTICA
+|41|70|LABORATORIO ANALISI
+|42|7001|CITOFLUORIMETRIA
+|43|75|DERMATOLOGIA
+|44|76|ORTOPEDIA ONCOLOGICA
+|45|90|AMMINISTRAZIONE
+|46|901|AMBULATORI
+|47|902|SERVIZIO DIAGNOSTICA DH ONCOL.
+|48|91|CUCINA
+|49|94|PSICOLOGIA
+|50|95|SERVIZIO SOCIALE
+|51|96|SCREENING POLMONE
+|52|97|SCREENING TIROIDEO
+== Struttura della tabella ec_stanze
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|id_agenda_htsan|int(11)|No|
+|numero_stanza|varchar(30)|No|
+|creato_da|int(11)|No|
+|modificato_da|int(11)|No|
+|data_creazione|datetime|No|
+|data_modifica|datetime|No|
+|eliminato|int(11)|No|0
+== Dump dei dati per la tabella ec_stanze
+
+|1|3|4|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|2|1|3|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|3|8|2|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|4|2|3|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|5|33|1|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|6|1000|TC|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|7|12|Dir. Med. Nuc.|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|8|21|Dir. Med. Nuc.|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|9|22|Dir. Med. Nuc.|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|10|24|Dir. Med. Nuc.|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|11|11|Dir. Med. Nuc.|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+== Struttura della tabella ec_status
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|nome_status|varchar(35)|No|
+== Dump dei dati per la tabella ec_status
+
+|1|Attivo
+|2|Non Attivo
+|3|Stampato
+|4|Chiamata
+|5|Presente
+|6|Assente
+|7|Chiuso
+== Struttura della tabella ec_ticket_totem
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|id_modalita|int(11)|No|
+|id_agenda_htsan|int(11)|No|
+|data|datetime|No|
+|contatore_locale|int(11)|No|
+|contatore_globale|int(11)|No|
+|codice_ticket|varchar(36)|No|
+== Dump dei dati per la tabella ec_ticket_totem
+
+|1|1|1|2017-07-27 17:12:56|1|1|RD0001
+|2|2|12|2017-07-27 17:12:57|1|2|MP0001
+|3|1|4|2017-07-27 17:12:59|1|3|RC0001
+|4|1|1000|2017-07-27 17:12:59|1|4|RC0001
+== Struttura della tabella ec_totem_configurazione
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|codice|int(11)|No|
+|nome|varchar(45)|No|
+|modalita|int(1)|No|0
+|stato|int(1)|No|0
+== Dump dei dati per la tabella ec_totem_configurazione
+
+|1|1|Radioterapia|1|1
+|2|2|M. Nucleare|1|1
+|3|3|Day Hospital|1|1
+|4|4|Informazioni|1|1
+|5|2|DAY HOSPITAL|0|0
+|6|201|DAY SURGERY|0|0
+|7|203|UROLOGIA D.H.|0|0
+|8|204|ONCOEMATOLOGIA D.H.|0|0
+|9|3|ANATOMIA PATOLOGICA|0|0
+|10|5|ANGIOLOGIA|0|0
+|11|8|CARDIOLOGIA|0|1
+|12|120|IORT|0|0
+|13|18|EMOTRASFUSIONE|0|0
+|14|30|NEUROCHIRURGIA|0|0
+|15|34|OCULISTICA|0|0
+|16|38|OTORINOLARINGOIATRIA|0|0
+|17|3801|MICROCHIRURGIA ORL|0|0
+|18|43|UROLOGIA|0|0
+|19|4301|LITOTRISSIA|0|0
+|20|49|TERAPIA INTENSIVA|0|0
+|21|50|ANESTESIA/TERAP.ANTALGICA AMB.|0|0
+|22|56|RECUPERO E RIABILITAZIONE|0|0
+|23|58|ENDOSCOPIA|0|0
+|24|59|GINECOLOGIA|0|0
+|25|61|MEDICINA NUCLEARE|0|0
+|26|63|ECOGRAFIA|0|0
+|27|631|ECOGRAFIA DR.RIZZO|0|0
+|28|64|ONCOLOGIA AMBUL.|0|0
+|29|6400|ONCOLOGIA MEDICA|0|0
+|30|6401|CHIRURGIA ONCOLOGICA|0|0
+|31|6402|RADIOTERAPIA|0|0
+|32|6403|TERAPIA ANTALGICA|0|0
+|33|6404|ONCOEMATOLOGIA|0|0
+|34|6405|TMO|0|0
+|35|6406|CHIRURGIA TORACICA|0|0
+|36|6410|CHIRURGIA ONCOLOGICA AMB.|0|0
+|37|6411|BREAST UNIT|0|0
+|38|6433|CURE PALLIATIVE|0|0
+|39|65|TAC|0|0
+|40|66|ONCOEMATOLOGIA AMBULAT./REF.|0|0
+|41|67|RMN|0|0
+|42|68|PNEUMOLOGIA|0|0
+|43|69|RADIOLOGIA|0|0
+|44|6901|RADIOLOGIA INTERVENTISTICA|0|0
+|45|70|LABORATORIO ANALISI|0|0
+|46|7001|CITOFLUORIMETRIA|0|0
+|47|75|DERMATOLOGIA|0|0
+|48|76|ORTOPEDIA ONCOLOGICA|0|0
+|49|90|AMMINISTRAZIONE|0|0
+|50|901|AMBULATORI|0|0
+|51|902|SERVIZIO DIAGNOSTICA DH ONCOL.|0|0
+|52|91|CUCINA|0|0
+|53|94|PSICOLOGIA|0|0
+|54|95|SERVIZIO SOCIALE|0|0
+|55|96|SCREENING POLMONE|0|0
+|56|97|SCREENING TIROIDEO|0|0
+== Struttura della tabella ec_tracking_operatore
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|id_operatore|int(11)|No|
+|status|int(11)|No|
+|data|date|No|
+|ora|time|No|
+== Dump dei dati per la tabella ec_tracking_operatore
+
+== Struttura della tabella ec_tracking_status_ticket
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|ticket_id|int(11)|No|
+|utente_id|int(11)|No|
+|status|int(11)|No|
+|data|datetime|No|
+== Dump dei dati per la tabella ec_tracking_status_ticket
+
+|1|1|0|3|2017-07-27 17:12:56
+|2|2|0|3|2017-07-27 17:12:57
+|3|3|0|3|2017-07-27 17:12:59
+|4|4|0|3|2017-07-27 17:12:59
+|5|1|1|4|2017-07-27 17:13:09
+|6|1|1|5|2017-07-27 17:13:12
+|7|1|1|7|2017-07-27 17:13:17
+|8|3|1|4|2017-07-27 17:13:26
+|9|3|1|5|2017-07-27 17:13:28
+|10|3|1|6|2017-07-27 17:13:31
+== Struttura della tabella ec_tracking_ticket
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|id_operatore|int(11)|No|
+|id_ticket|int(11)|No|
+|status|int(11)|No|
+|data|date|No|
+|ora|time|No|
+|in_carica|int(11)|No|
+== Dump dei dati per la tabella ec_tracking_ticket
+
+|1|1|1|7|2017-07-27|17:13:17|0
+|2|0|2|3|2017-07-27|17:12:57|0
+|3|0|3|6|2017-07-27|17:12:59|0
+|4|0|4|3|2017-07-27|17:12:59|0
+== Struttura della tabella ec_utenti
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|id_htsan|int(11)|Sì|NULL
+|id_ruolo|int(11)|No|
+|tecnico|int(11)|No|
+|status|int(11)|No|
+|**username**|varchar(45)|No|
+|password|varchar(255)|No|
+|nome|varchar(45)|No|
+|cognome|varchar(45)|No|
+|codice_fiscale|varchar(16)|Sì|NULL
+|reparto|int(11)|No|
+|**email**|varchar(60)|No|
+|cap|varchar(5)|Sì|NULL
+|citta|varchar(45)|Sì|NULL
+|indirizzo|varchar(45)|Sì|NULL
+|telefono|varchar(12)|Sì|NULL
+|cellulare|varchar(12)|Sì|NULL
+|creato_da|int(11)|No|
+|modificato_da|int(11)|No|
+|data_creazione|datetime|No|
+|data_modifica|datetime|No|
+|eliminato|int(11)|No|
+== Dump dei dati per la tabella ec_utenti
+
+|1|0|1|0|1|admin|$2y$10$qRgSs.DBcQC5hgiEuDR2Meh1xH6/oNDUafHqXL1cl8VJmgHETdCNa|Mario|Rossi|PRVCN89H421X|0|admin@gmail.com|95100|Catania|via roma|3405863783|3405863783|0|1|0000-00-00 00:00:00|2017-05-05 16:32:59|0
+|140|0|3|0|1|agata.fassari|$2y$10$8O7vSGkvvfzIGFGwXagbzO4mFnBrd1/nztBgW5Y5BOfuDRUjfBhIe|Agata|Fassari| |1|a.fassari@pyxisos.com| | |via no so| | |1|1|2017-03-06 11:05:49|2017-05-05 16:38:29|0
+|139|744|5|0|1|maria_grazia.d_agati|$2y$10$HHGbZCvsunhhNnm52xKB5.jOeFc5zZIxsd9HKlSbrFcdW2sq/1NKq|Maria Grazia|D'agati|NULL|0|maria_grazia.d'agati@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|138|406|3|0|1|grazia_maria.rasa|$2y$10$1pCjOUpbtugTgttP3q5Pueg1cz6WBD4kPYPsmh5RypJcC.M/hJt/e|Grazia Maria|Rasà| |0|grazia_maria.rasa'@grupposamed.com| | | | | |0|1|0000-00-00 00:00:00|2017-02-21 17:14:04|0
+|137|320|5|0|1|pier_luigi.d_angelo|$2y$10$3NtOBaAVz9faxMjkg40ToupQaqluk8u7G7svPEBOoIpKIc.6OYium|Pier Luigi|D'angelo|NULL|1|pier_luigi.d'angelo@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|136|745|3|0|1|rosa_maria.riolo|$1$j9Yruhf6$ilDGsbvkJ.zk43einpjF7.|Rosa Maria|Riolo|NULL|0|rosa_maria.riolo@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|135|739|3|0|1|pruiti.simona|$1$G.LIonje$O1S8GwNaWkg.ZEqd0T0kg1|Pruiti|Simona|NULL|0|pruiti.simona@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|134|738|5|0|1|marisa.bonanno|$1$ka7PrfI/$82s0.1oiTylXyMvZszWCr/|Marisa|Bonanno|NULL|0|marisa.bonanno@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|133|737|5|0|1|luigi.bordonaro|$2y$10$yOJa833tOOlHkWWjqkcie.zryQIniqSkoyem/yNCJEG3x/ksebRyu|Luigi|Bordonaro| |1|luigi.bordonaro@grupposamed.com| | | | | |0|1|0000-00-00 00:00:00|2017-04-26 11:10:50|0
+|132|736|3|0|1|angelica.reitano|$1$A0gapt2b$tUlVzk4djQYV4x2ievrLs1|Angelica|Reitano|NULL|0|angelica.reitano@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|131|735|5|0|1|alessia.fabbrini|$2y$10$aMJ/kN/OxlaXpWsEEActFOcuaMFYKYoyj47O2JV1aoIT83U.byC8e|Alessia|Fabbrini| |1|alessia.fabbrini@grupposamed.com| | | | | |0|1|0000-00-00 00:00:00|2017-04-26 10:52:39|0
+|130|720|1|0|1|daniele.coppola|$1$IXHjr1Ea$q6o8nG3csWuxg.Wrfy.0j/|Daniele|Coppola|NULL|0|daniele.coppola@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|129|707|3|0|1|fabiola.celeste|$1$7uiBQKak$b0Bjd3oASXO7wkERHw5Ap.|Fabiola|Celeste|NULL|0|fabiola.celeste@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|127|700|5|0|1|vincenza.umina|$1$mfetHkmZ$IatOr5.X93dPQTJGHHNyb/|Vincenza|Umina|NULL|1|vincenza.umina@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|128|701|5|0|1|enrico.pennisi|$1$3nEyR/V.$hSV8huF2A.H2lg58RxZxX1|Enrico|Pennisi|NULL|1|enrico.pennisi@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|126|505|1|0|1|salvatore.musumeci|$1$SOAMo5fD$qjloX0WO1VVM8MuQ2DWiV1|Salvatore|Musumeci|NULL|0|salvatore.musumeci@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|125|500|1|0|1|domenico.musumeci|$1$WBUwciDb$RHep6oIXXksDXmY0ZRuj1.|Domenico|Musumeci|NULL|0|domenico.musumeci@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|124|435|3|0|1|giusy.pirrone|$1$N.zLsv8R$1.b1Kn7Anbo8Ht2dVUWD/1|Giusy|Pirrone|NULL|0|giusy.pirrone@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|123|408|3|0|1|rammunee.auchoybur|$1$lfdGhMol$zxoB6m5W.0ps6TFOzD.PG.|Rammunee|Auchoybur|NULL|0|rammunee.auchoybur@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|122|405|3|0|1|carmela.nicotra|$1$Ak2ZuLoA$zfSo7NDUvtY..N1MAa1.X0|Carmela|Nicotra|NULL|0|carmela.nicotra@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|121|403|3|0|1|carmela.maffei|$1$2BaD8L/C$V7H3aGb0th5udbsrznPNu1|Carmela|Maffei|NULL|0|carmela.maffei@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|120|402|3|0|1|maria.favitta|$1$iWn5iZRs$K1NGTcs8BNDRgyasEb1dS0|Maria|Favitta|NULL|0|maria.favitta@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|119|401|3|0|1|gabriella.coppa|$1$LMBpug2o$loEkBJcT1G6So8nbfYscT1|Gabriella|Coppa|NULL|0|gabriella.coppa@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|118|400|5|0|1|patrizia.scalia|$1$8DKUSmBK$nHwGDnYGNrTgR0xXqh7Ad1|Patrizia|Scalia|NULL|0|patrizia.scalia@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|117|372|5|0|1|guido_angelo.ciavola|$1$LnznJyP.$I9z22t7DhhR9W/Kn5loPE.|Guido Angelo|Ciavola|NULL|0|guido_angelo.ciavola@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|116|312|5|1|1|massimo.mancuso|$1$eJq4q7wb$mLmBOFXa6ymDAPx.OSJ6l.|Massimo|Mancuso|NULL|1|massimo.mancuso@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|115|311|5|1|1|lucia_cinzia.spina|$1$pJaBEfZi$.McpHRnQq6at3Y4IE3TrH.|Lucia Cinzia|Spina|NULL|1|lucia_cinzia.spina@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|114|310|5|0|1|giuseppa.salaniti|$1$Gu8H8xOG$sjHKWoVWu9sYKPhOn9OYP.|Giuseppa|Salaniti|NULL|0|giuseppa.salaniti@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|113|309|5|0|1|giuseppe.mirabella|$1$CiEDaS/v$/6AoXFok1BVLDroXFGQTs/|Giuseppe|Mirabella|NULL|0|giuseppe.mirabella@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|112|308|5|1|1|francesca.licitra|$1$4EV8oof8$UJVlLFhM2kf4ePYmA9rRR1|Francesca|Licitra|NULL|0|francesca.licitra@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|110|306|5|1|1|maria.giugno|$1$h9tarHp3$/STvi6StAAxAtEeMdy09v0|Maria|Giugno|NULL|0|maria.giugno@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|111|307|5|0|1|riccardo.la_manna|$1$phSsU2/A$lxVns6LfyK6aNAjpquDK80|Riccardo|La manna|NULL|0|riccardo.la_manna@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|109|305|5|1|1|cristiana.gallego|$1$q8CxhHIf$nFtjrsyoO7aRfxpKX/hrV0|Cristiana|Gallego|NULL|1|cristiana.gallego@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|108|303|5|1|1|vita_maria.franco|$1$QoB4R8bg$eALcar2Jowy1h/be18o2//|Vita maria|Franco|NULL|1|vita_maria.franco@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|106|301|5|1|1|giovanni.bucolo|$1$kRiHDkZl$x1x0fnQ1r/6oD1SllgcEG/|Giovanni|Bucolo|NULL|1|giovanni.bucolo@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|107|302|5|1|1|giovanni.cocchiara|$1$LBE18UVP$dbaEVRvvC0jPjbv9oamUI.|Giovanni|Cocchiara|NULL|2|giovanni.cocchiara@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|105|193|5|0|1|salvatore.pennisi|$1$5zBW0Olo$eeOCs.majxpsE36redli..|Salvatore|Pennisi|NULL|0|salvatore.pennisi@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|104|131|5|0|1|claudia.caltavuturo|$1$boubvuB8$4kfyis5mi9O9u7vORVCTf.|Claudia|Caltavuturo|NULL|0|claudia.caltavuturo@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|103|121|5|0|1|marcello.majorana|$1$skmXUFB3$akOMdIbidxYE4eMLryDpr0|Marcello|Majorana|NULL|0|marcello.majorana@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|102|44|5|0|1|alessandro.ricciardi|$1$AAwbrzYk$tj84n2tosF4vibYYYWwsl0|Alessandro|Ricciardi|NULL|0|alessandro.ricciardi@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|101|43|5|0|1|giuseppa_emanuela.pennisi|$1$/oJO4sj1$l.XXhYXji/siePproZles/|Giuseppa emanuela|Pennisi|NULL|2|giuseppa_emanuela.pennisi@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|100|42|5|0|1|angela.distefano|$1$ykOPUMPo$JhVayRe7Bm6AxIC2IMzbi/|Angela|Distefano|NULL|2|angela.distefano@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|99|24|5|0|1|salvatrice.contarino|$1$wC81DrYG$.W7Xk0b9/ZSOEJeOdVa2y.|Salvatrice|Contarino|NULL|0|salvatrice.contarino@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|98|14|5|0|1|lorenza.marino|$1$TCUkS3T6$GD1niZAvmiRGNq7KjyHgu0|Lorenza|Marino|NULL|1|lorenza.marino@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|96|3|5|0|1|luigi.castorina|$1$ns5ZDwf2$HkgSge5PEL7D08zq2TrWF1|Luigi|Castorina|NULL|2|luigi.castorina@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|97|7|5|0|1|alfio_michelangelo.di_grazia|$1$z4BGidD1$1KxVA6jo46ByhaAAERvAP0|Alfio michelangelo|Di grazia|NULL|1|alfio_michelangelo.di_grazia@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|95|2|1|0|1|roberto.musumeci|$1$/7b66O8B$eGyDL9biuD8jJqhJoFuvs.|Roberto|Musumeci|NULL|0|roberto.musumeci@grupposamed.com|NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|90|900|5|0|1|luigi.castorina2|$2y$10$2GDKH4xRIsFUyQNasMhI9ueKUJKZLFc/ToSCJXNUviZgwZaO.R3cC|luigi|castorina|NULL|0| |NULL|NULL|NULL|NULL|NULL|0|0|0000-00-00 00:00:00|0000-00-00 00:00:00|0
+|141|0|6|0|1|comunicazione|$2y$10$cWMWEaT0ft7IQiPZWXlkjOcCFtvI/x7pQYJacgTUfGkunlhrG1d6.|Comunicatore|Comunicatore| |0|Comunicatore@gmail.com| | | | | |1|0|2017-04-18 13:10:12|0000-00-00 00:00:00|0
+|142|0|6|0|1|lucia.zarbano|$2y$10$xLBoj3VwmMlmrv3XRwCy7ekHqTHzD.SJth8cBi/tHTsDqZR8ziDqG|Lucia|Zarbano| |1|lucia.zarbano@gmail.com| | | | | |1|0|2017-04-26 10:57:17|0000-00-00 00:00:00|0
+|143|0|3|1|1|antonella.rinaldi|$2y$10$z9G1DXOREIrVaszxp7x1VOM0iT7bcAve8bpXLgEEsQS/9ry/Yqu86|Antonella|Rinaldi| |1|antonella.rinaldi@gmail.com| | | | | |1|1|2017-04-26 12:40:15|2017-04-26 12:40:44|0
+|144|0|3|0|1|luigi.bianchi|$2y$10$NUdqqqcK4u7yiMfgPH.phOyJKo3ViKMgGgcLUSK3pLALzpkQfV/sq|Luigi |Bianchi| |0|luigi.bianchi@grupposamed.com| | | | | |1|0|2017-05-09 14:57:22|0000-00-00 00:00:00|0
+== Struttura della tabella ec_utenti_ruoli
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|id_utente|int(11)|No|
+|id_ruolo|int(11)|No|
+== Dump dei dati per la tabella ec_utenti_ruoli
+
+|124|90|5
+|140|139|5
+|142|137|5
+|143|136|3
+|144|135|3
+|145|134|5
+|147|132|3
+|149|130|1
+|150|129|3
+|151|127|5
+|152|128|5
+|153|126|1
+|154|125|1
+|155|124|3
+|156|123|3
+|157|122|3
+|158|121|3
+|159|120|3
+|160|119|3
+|161|118|5
+|162|117|5
+|163|116|5
+|164|115|5
+|165|114|5
+|166|113|5
+|167|112|5
+|168|110|5
+|169|111|5
+|170|109|5
+|171|108|5
+|172|106|5
+|173|107|5
+|174|105|5
+|175|104|5
+|176|103|5
+|177|102|5
+|178|101|5
+|179|100|5
+|180|99|5
+|181|98|5
+|182|96|5
+|183|97|5
+|184|95|1
+|185|138|3
+|188|141|6
+|198|131|5
+|199|142|3
+|200|142|6
+|201|133|5
+|203|143|3
+|221|1|1
+|226|140|3
+|227|140|5
+|228|144|3
+== Struttura della tabella ec_video
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|//**id**//|int(11)|No|
+|titolo|varchar(255)|No|
+|descrizione|text|No|
+|orario|time|No|
+|tipologia|varchar(36)|No|
+== Dump dei dati per la tabella ec_video
+
+== Struttura stand-in per le viste flusso ambulatorio
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|IdPrestazione|int(11)|No|0
+|IdModalita|varchar(50)|No|
+|Data|varchar(10)|Sì|NULL
+|IdInfermiere|bigint(11)|Sì|NULL
+|IdMedico|bigint(11)|Sì|NULL
+|Accettato|time|No|
+|Chiamato|time|Sì|NULL
+|InizioPrestazione|time|Sì|NULL
+|FinePrestazione|time|Sì|NULL
+== Struttura stand-in per le viste flusso dh
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|IdPrestazione|int(11)|No|0
+|IdModalita|varchar(50)|No|
+|Data|varchar(10)|Sì|NULL
+|IdInfermiere|bigint(11)|Sì|NULL
+|IdMedico|bigint(11)|Sì|NULL
+|InizioPrelievo|time|No|
+|FinePrelievo|time|No|
+|InizioPrestazione|time|No|
+|FinePrestazione|time|No|
+== Struttura stand-in per le viste flusso dh completo
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|IdPrestazione|int(11)|No|0
+|IdTicket|int(11)|No|
+|IdModalita|varchar(50)|No|
+|Data|varchar(10)|Sì|NULL
+|IdOperatore|bigint(11)|Sì|NULL
+|Prelevato|datetime|Sì|NULL
+|Chiamato|datetime|Sì|NULL
+|Presente|datetime|Sì|NULL
+|Assente|datetime|Sì|NULL
+|IdInfermiere|bigint(11)|Sì|NULL
+|IdMedico|bigint(11)|Sì|NULL
+|InizioPrelievo|time|No|
+|FinePrelievo|time|No|
+|InizioPrestazione|time|No|
+|FinePrestazione|time|No|
+== Struttura stand-in per le viste flusso ricovero
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|IdRicovero|int(11)|No|0
+|IdModalita|varchar(50)|No|
+|Data|varchar(10)|Sì|NULL
+|IdInfermiere|bigint(11)|Sì|NULL
+|Accettato|time|No|
+|Chiamato|time|Sì|NULL
+|InizioRicovero|time|Sì|NULL
+|FineRicovero|time|Sì|NULL
+== Struttura stand-in per le viste flusso ticket
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|IdTicket|int(11)|No|
+|IdModalita|int(11)|No|
+|Data|varchar(10)|Sì|NULL
+|IdOperatore|bigint(11)|Sì|NULL
+|Prelevato|datetime|Sì|NULL
+|Chiamato|datetime|Sì|NULL
+|Presente|datetime|Sì|NULL
+|Assente|datetime|Sì|NULL
+|Accettato|datetime|Sì|NULL
+== Struttura stand-in per le viste numero stati ticket per operatore
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|id_operatore|int(11)|No|
+|DataCorrente|varchar(10)|Sì|NULL
+|N_Totali|bigint(21)|No|0
+|N_Chiamati|bigint(21)|No|0
+|N_Presenti|bigint(21)|No|0
+|N_Assenti|bigint(21)|No|0
+|N_Accettati|bigint(21)|No|0
+== Struttura stand-in per le viste ticket prelevati e accettati
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|id_ticket|int(11)|No|0
+|id_modalita|int(11)|No|
+|codice_ticket|varchar(36)|No|
+|data_prelievo_ticket|datetime|No|
+|id_operatore|int(11)|Sì|NULL
+|data_accettazione|date|Sì|NULL
+|ora_accettazione|time|Sì|NULL
+== Struttura stand-in per le viste totale stati ticket per data e modalita
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|IdModalita|int(11)|No|
+|DataCorrente|varchar(10)|Sì|NULL
+|N_Totali|bigint(21)|No|0
+|N_Prelevati|bigint(21)|No|0
+|N_Chiamati|bigint(21)|No|0
+|N_Presenti|bigint(21)|No|0
+|N_Assenti|bigint(21)|No|0
+|N_Accettati|bigint(21)|No|0
+== Struttura per la vista flusso ambulatorio
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|IdPrestazione|int(11)|No|0
+|IdModalita|varchar(50)|No|
+|Data|varchar(10)|Sì|NULL
+|IdInfermiere|bigint(11)|Sì|NULL
+|IdMedico|bigint(11)|Sì|NULL
+|Accettato|time|No|
+|Chiamato|time|Sì|NULL
+|InizioPrestazione|time|Sì|NULL
+|FinePrestazione|time|Sì|NULL
+== Struttura per la vista flusso dh
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|IdPrestazione|int(11)|No|0
+|IdModalita|varchar(50)|No|
+|Data|varchar(10)|Sì|NULL
+|IdInfermiere|bigint(11)|Sì|NULL
+|IdMedico|bigint(11)|Sì|NULL
+|InizioPrelievo|time|No|
+|FinePrelievo|time|No|
+|InizioPrestazione|time|No|
+|FinePrestazione|time|No|
+== Struttura per la vista flusso dh completo
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|IdPrestazione|int(11)|No|0
+|IdTicket|int(11)|No|
+|IdModalita|varchar(50)|No|
+|Data|varchar(10)|Sì|NULL
+|IdOperatore|bigint(11)|Sì|NULL
+|Prelevato|datetime|Sì|NULL
+|Chiamato|datetime|Sì|NULL
+|Presente|datetime|Sì|NULL
+|Assente|datetime|Sì|NULL
+|IdInfermiere|bigint(11)|Sì|NULL
+|IdMedico|bigint(11)|Sì|NULL
+|InizioPrelievo|time|No|
+|FinePrelievo|time|No|
+|InizioPrestazione|time|No|
+|FinePrestazione|time|No|
+== Struttura per la vista flusso ricovero
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|IdRicovero|int(11)|No|0
+|IdModalita|varchar(50)|No|
+|Data|varchar(10)|Sì|NULL
+|IdInfermiere|bigint(11)|Sì|NULL
+|Accettato|time|No|
+|Chiamato|time|Sì|NULL
+|InizioRicovero|time|Sì|NULL
+|FineRicovero|time|Sì|NULL
+== Struttura per la vista flusso ticket
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|IdTicket|int(11)|No|
+|IdModalita|int(11)|No|
+|Data|varchar(10)|Sì|NULL
+|IdOperatore|bigint(11)|Sì|NULL
+|Prelevato|datetime|Sì|NULL
+|Chiamato|datetime|Sì|NULL
+|Presente|datetime|Sì|NULL
+|Assente|datetime|Sì|NULL
+|Accettato|datetime|Sì|NULL
+== Struttura per la vista numero stati ticket per operatore
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|id_operatore|int(11)|No|
+|DataCorrente|varchar(10)|Sì|NULL
+|N_Totali|bigint(21)|No|0
+|N_Chiamati|bigint(21)|No|0
+|N_Presenti|bigint(21)|No|0
+|N_Assenti|bigint(21)|No|0
+|N_Accettati|bigint(21)|No|0
+== Struttura per la vista ticket prelevati e accettati
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|id_ticket|int(11)|No|0
+|id_modalita|int(11)|No|
+|codice_ticket|varchar(36)|No|
+|data_prelievo_ticket|datetime|No|
+|id_operatore|int(11)|Sì|NULL
+|data_accettazione|date|Sì|NULL
+|ora_accettazione|time|Sì|NULL
+== Struttura per la vista totale stati ticket per data e modalita
+
+|------
+|Colonna|Tipo|Null|Predefinito
+|------
+|IdModalita|int(11)|No|
+|DataCorrente|varchar(10)|Sì|NULL
+|N_Totali|bigint(21)|No|0
+|N_Prelevati|bigint(21)|No|0
+|N_Chiamati|bigint(21)|No|0
+|N_Presenti|bigint(21)|No|0
+|N_Assenti|bigint(21)|No|0
+|N_Accettati|bigint(21)|No|0
