@@ -3,8 +3,8 @@ add|/WEB-INF/classes/alfresco/web-extension/site-data/extensions/print-pdf-actio
 add|/WEB-INF/classes/alfresco/web-extension/site-data/extensions/print-pdf-actions-share-slingshot-application-context.xml
 add|/WEB-INF/classes/alfresco/web-extension/site-data/extensions/print-pdf-actions-share-example-widgets.xml
 add|/WEB-INF/classes/alfresco/web-extension/site-webscripts/com/example/pages/simple-page.get.js
-add|/WEB-INF/classes/alfresco/web-extension/site-webscripts/com/example/pages/simple-page.get.html.ftl
 add|/WEB-INF/classes/alfresco/web-extension/site-webscripts/com/example/pages/simple-page.get.desc.xml
+add|/WEB-INF/classes/alfresco/web-extension/site-webscripts/com/example/pages/simple-page.get.html.ftl
 add|/WEB-INF/classes/alfresco/web-extension/site-webscripts/org/alfresco/README.md
 add|/WEB-INF/classes/alfresco/web-extension/messages/print-pdf-actions.properties
 add|/WEB-INF/classes/alfresco/web-extension/print-pdf-actions-share-slingshot-application-context.xml

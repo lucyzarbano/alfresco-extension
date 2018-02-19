@@ -1,0 +1,5 @@
+<Context path="/share" reloadable="false" backgroundProcessorDelay="-1">
+  <Resources className="org.apache.naming.resources.VirtualDirContext" extraResourcePaths="/=/home/utente/TUTORIAL-HOME/GITHUB/print-pdf-actions-share/target/amp/web,/home/utente/TUTORIAL-HOME/GITHUB/print-pdf-actions-share/target/amp-war"/>
+  <Loader searchVirtualFirst="true" className="org.apache.catalina.loader.VirtualWebappLoader" virtualClasspath="/home/utente/TUTORIAL-HOME/GITHUB/print-pdf-actions-share/target/classes;/home/utente/TUTORIAL-HOME/GITHUB/print-pdf-actions-share/target/amp/config;/home/utente/TUTORIAL-HOME/GITHUB/print-pdf-actions-share/target/test-classes"/>
+  <JarScanner scanAllDirectories="true"/>
+</Context>

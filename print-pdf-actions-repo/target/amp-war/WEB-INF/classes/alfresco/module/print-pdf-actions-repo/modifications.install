@@ -5,13 +5,13 @@ add|/WEB-INF/classes/alfresco/extension/templates/webscripts/transformPDF.get.js
 add|/WEB-INF/classes/alfresco/extension/templates/webscripts/transformPDF.get-bk.js
 add|/WEB-INF/classes/alfresco/module/print-pdf-actions-repo/model/workflow-model.xml
 add|/WEB-INF/classes/alfresco/module/print-pdf-actions-repo/model/content-model.xml
-add|/WEB-INF/classes/alfresco/module/print-pdf-actions-repo/context/alfresco-global.properties
-add|/WEB-INF/classes/alfresco/module/print-pdf-actions-repo/context/bootstrap-context.xml
 add|/WEB-INF/classes/alfresco/module/print-pdf-actions-repo/context/webscript-context.xml
 add|/WEB-INF/classes/alfresco/module/print-pdf-actions-repo/context/service-context.xml
+add|/WEB-INF/classes/alfresco/module/print-pdf-actions-repo/context/alfresco-global.properties
+add|/WEB-INF/classes/alfresco/module/print-pdf-actions-repo/context/bootstrap-context.xml
 add|/WEB-INF/classes/alfresco/module/print-pdf-actions-repo/module-context.xml
-add|/WEB-INF/classes/alfresco/module/print-pdf-actions-repo/log4j.properties
 add|/WEB-INF/classes/alfresco/module/print-pdf-actions-repo/alfresco-global.properties
+add|/WEB-INF/classes/alfresco/module/print-pdf-actions-repo/log4j.properties
 mkdir|/WEB-INF/classes/alfresco/extension/templates/webscripts
 mkdir|/WEB-INF/classes/alfresco/extension/templates
 mkdir|/WEB-INF/classes/alfresco/extension
